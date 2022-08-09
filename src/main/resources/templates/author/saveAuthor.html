@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegisterAuthor</title>
+    <link rel="stylesheet" type="text/css" media="all"
+    href="/css/FormDesign.css" th:href="@{/css/FormDesign.css}">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="form">
+    <form th:method="POST" th:action="@{/authors}" th:object="${author}" class="form">
+        <div class="field">
+            <br/>
+        <label for="name"></label>
+        <input type="text" th:field="*{authorName}" id="name" placeholder="Enter name">
+        <br/>
+        </div>
+        <div class="field">
+        <label for="birthDate"></label>
+        <input type="text" th:field="*{birthDate}" id="birthDate" placeholder="Enter your birth date">
+        <br/>
+        </div>
+        <div class="field">
+        <label for="phoneNumber"></label>
+        <input type="text" th:field="*{phoneNumber}" id="phoneNumber" placeholder="Enter your phone number">
+        <br/>
+        </div>
+        <div class="field">
+        <label for="email"></label>
+        <input type="text" th:field="*{email}" id="email" placeholder="Enter your email">
+        <br/>
+        </div>
+        <div class="button">
+        <input type="submit" value="create"/>
+        </div>
+    </form>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Author</title>
+  <link rel="stylesheet" type="text/css" media="all"
+        href="/css/FormDesign.css" th:href="@{/css/FormDesign.css}">
+  <ul class="top_menu">
+    <li><a th:href="@{/authors/new}">new author</a></li>
+    <li><a th:href="@{/books/new}">new book</a></li>
+    <li><a th:href="@{/books/by_name}">book by author name</a></li>
+    <li><a th:href="@{/books/by_part_name}">book by author  part name</a></li>
+    <li><a th:href="@{/books/most_selling}">most selling book</a></li>
+    <li><a th:href="@{/books/most_published}">most published book</a></li>
+    <li><a th:href="@{/authors/most_popular}">most popular</a></li>
+  </ul>
+</head>
+
+<body class="body_MP">
+<table class="table_MP">
+  <tr>
+    <th>Book_Title</th>
+    <th>Author_id</th>
+    <th>Published_Amount</th>
+    <th>Selling_Amount</th>
+  </tr>
+
+  <tr th:each="lst : ${list}">
+    <td th:utext="${lst.bookName}">Book_Title</td>
+    <td th:utext="${lst.authorId}">Author_id</td>
+    <td th:utext="${lst.publishedAmount}">Published_Amount</td>
+    <td th:utext="${lst.soldAmount}">Selling_Amount</td>
+  </tr>
+
+</table>
+
+</body>
+
+</html>

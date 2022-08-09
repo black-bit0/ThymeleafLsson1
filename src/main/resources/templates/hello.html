@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/css/FormDesign.css" th:href="@{/css/FormDesign.css}">
+</head>
+<body class="menu_body">
+<div class="category-wrap">
+    <h3>Navigation</h3>
+    <ul>
+        <li><a th:href="@{/authors/new}">new author</a></li>
+        <li><a th:href="@{/books/new}">new book</a></li>
+        <li><a th:href="@{/books/by_name}">book by author name</a></li>
+        <li><a th:href="@{/books/by_part_name}">book by author  part name</a></li>
+        <li><a th:href="@{/books/most_selling}">most selling book</a></li>
+        <li><a th:href="@{/books/most_published}">most published book</a></li>
+        <li><a th:href="@{/authors/most_popular}">most popular</a></li>
+    </ul>
+</div>
+</body>
+</html>

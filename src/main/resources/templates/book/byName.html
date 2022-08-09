@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>return</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/css/FormDesign.css" th:href="@{/css/FormDesign.css}">
+    <ul class="top_menu">
+        <li><a th:href="@{/authors/new}">new author</a></li>
+        <li><a th:href="@{/books/new}">new book</a></li>
+        <li><a th:href="@{/books/by_part_name}">book by author  part name</a></li>
+        <li><a th:href="@{/books/most_selling}">most selling book</a></li>
+        <li><a th:href="@{/books/most_published}">most published book</a></li>
+        <li><a th:href="@{/authors/most_popular}">most popular</a></li>
+    </ul>
+</head>
+<body class="body_MP">
+    <div class="input_MP">
+    <form th:action="@{/books/by_name}" th:method="GET">
+        <input type="text" name="name"/>
+        <button class="button_MP" type="submit">Search</button>
+    </form>
+    </div>
+
+    <table class="table_MP">
+        <tr>
+            <th>Title</th>
+            <th>author Id</th>
+            <th>published Amount</th>
+            <th>sold Amount</th>
+        </tr>
+
+        <tr th:each="lst : ${list}">
+            <td th:utext="${lst.bookName}">bookName</td>
+            <td th:utext="${lst.authorId}">authorId</td>
+            <td th:utext="${lst.publishedAmount}">publishedAmount</td>
+            <td th:utext="${lst.soldAmount}">soldAmount</td>
+        </tr>
+</body>
+</html>

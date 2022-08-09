@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save Book</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/css/FormDesign.css" th:href="@{/css/FormDesign.css}">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="form">
+        <form th:method="POST" th:action="@{/books}" th:object="${book}" class="form">
+            <div class="field">
+                <br/>
+                <label for="name"></label>
+                <input type="text" th:field="*{bookName}" id="name" placeholder="Enter name">
+                <br/>
+            </div>
+            <div class="field">
+                <label for="birthDate"></label>
+                <input type="text" th:field="*{authorId}" id="birthDate" placeholder="Enter your id">
+                <br/>
+            </div>
+            <div class="field">
+                <label for="phoneNumber"></label>
+                <input type="text" th:field="*{publishedAmount}" id="phoneNumber" placeholder="Enter published amount">
+                <br/>
+            </div>
+            <div class="field">
+                <label for="email"></label>
+                <input type="text" th:field="*{soldAmount}" id="email" placeholder="Enter sold amount">
+                <br/>
+            </div>
+            <div class="button">
+                <input type="submit" value="create"/>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

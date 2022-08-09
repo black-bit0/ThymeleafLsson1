@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Author</title>
+    <link rel="stylesheet" type="text/css" media="all"
+          href="/css/FormDesign.css" th:href="@{/css/FormDesign.css}">
+    <ul class="top_menu">
+        <li><a th:href="@{/authors/new}">new author</a></li>
+        <li><a th:href="@{/books/new}">new book</a></li>
+        <li><a th:href="@{/books/by_name}">book by author name</a></li>
+        <li><a th:href="@{/books/by_part_name}">book by author  part name</a></li>
+        <li><a th:href="@{/books/most_selling}">most selling book</a></li>
+        <li><a th:href="@{/books/most_published}">most published book</a></li>
+    </ul>
+</head>
+
+<body class="body_MP">
+<table class="table_MP">
+    <tr>
+        <th>name</th>
+        <th>birth date</th>
+        <th>phone number</th>
+        <th>email</th>
+    </tr>
+
+    <tr th:each="lst : ${list}">
+        <td th:utext="${lst.authorName}">authorName</td>
+        <td th:utext="${lst.birthDate}">birthDane</td>
+        <td th:utext="${lst.phoneNumber}">phoneNumber</td>
+        <td th:utext="${lst.email}">email</td>
+    </tr>
+
+</table>
+
+</body>
+
+</html>
